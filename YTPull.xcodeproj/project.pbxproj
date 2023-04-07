@@ -14,7 +14,13 @@
 		E5B8D52929DC2A7000B3D832 /* YTPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */; };
 		E5B8D53329DC2A7000B3D832 /* YTPullUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */; };
 		E5B8D53529DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */; };
-		E5B8D54E29DDB64F00B3D832 /* yt-dlp.sh in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D54D29DDB64F00B3D832 /* yt-dlp.sh */; };
+		E5B8D55029DFC64000B3D832 /* Execute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D54F29DFC64000B3D832 /* Execute.swift */; };
+		E5B8D55229DFC88200B3D832 /* yt-dlp.sh in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D55129DFC88200B3D832 /* yt-dlp.sh */; };
+		E5B8D55529E01A8100B3D832 /* ExecuteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55429E01A8100B3D832 /* ExecuteError.swift */; };
+		E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55929E01AC200B3D832 /* Bundle.swift */; };
+		E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55B29E01FBC00B3D832 /* String.swift */; };
+		E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55E29E0209500B3D832 /* VideoInfo.swift */; };
+		E5B8D56229E026E300B3D832 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D56129E026E300B3D832 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +52,13 @@
 		E5B8D52E29DC2A7000B3D832 /* YTPullUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTPullUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITests.swift; sourceTree = "<group>"; };
 		E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E5B8D54D29DDB64F00B3D832 /* yt-dlp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "yt-dlp.sh"; sourceTree = "<group>"; };
+		E5B8D54F29DFC64000B3D832 /* Execute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Execute.swift; sourceTree = "<group>"; };
+		E5B8D55129DFC88200B3D832 /* yt-dlp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "yt-dlp.sh"; sourceTree = "<group>"; };
+		E5B8D55429E01A8100B3D832 /* ExecuteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteError.swift; sourceTree = "<group>"; };
+		E5B8D55929E01AC200B3D832 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		E5B8D55B29E01FBC00B3D832 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E5B8D55E29E0209500B3D832 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		E5B8D56129E026E300B3D832 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +143,8 @@
 		E5B8D54729DD194400B3D832 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E5B8D55129DFC88200B3D832 /* yt-dlp.sh */,
 				E5B8D51C29DC2A7000B3D832 /* Preview Content */,
-				E5B8D54D29DDB64F00B3D832 /* yt-dlp.sh */,
 				E5B8D51F29DC2A7000B3D832 /* YTPull.entitlements */,
 				E5B8D51A29DC2A7000B3D832 /* Assets.xcassets */,
 			);
@@ -142,10 +154,48 @@
 		E5B8D54829DD196300B3D832 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E5B8D56029E0255800B3D832 /* View */,
+				E5B8D55D29E0208800B3D832 /* Model */,
+				E5B8D55829E01AB800B3D832 /* Extensions */,
+				E5B8D55329E01A5F00B3D832 /* Execute */,
 				E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */,
-				E5B8D51829DC2A6E00B3D832 /* ContentView.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		E5B8D55329E01A5F00B3D832 /* Execute */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D54F29DFC64000B3D832 /* Execute.swift */,
+				E5B8D55429E01A8100B3D832 /* ExecuteError.swift */,
+			);
+			path = Execute;
+			sourceTree = "<group>";
+		};
+		E5B8D55829E01AB800B3D832 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D55929E01AC200B3D832 /* Bundle.swift */,
+				E5B8D55B29E01FBC00B3D832 /* String.swift */,
+				E5B8D56129E026E300B3D832 /* Data.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5B8D55D29E0208800B3D832 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D55E29E0209500B3D832 /* VideoInfo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5B8D56029E0255800B3D832 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D51829DC2A6E00B3D832 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,7 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5B8D54E29DDB64F00B3D832 /* yt-dlp.sh in Resources */,
+				E5B8D55229DFC88200B3D832 /* yt-dlp.sh in Resources */,
 				E5B8D51E29DC2A7000B3D832 /* Preview Assets.xcassets in Resources */,
 				E5B8D51B29DC2A7000B3D832 /* Assets.xcassets in Resources */,
 			);
@@ -279,8 +329,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */,
+				E5B8D55529E01A8100B3D832 /* ExecuteError.swift in Sources */,
+				E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */,
 				E5B8D51929DC2A6E00B3D832 /* ContentView.swift in Sources */,
+				E5B8D55029DFC64000B3D832 /* Execute.swift in Sources */,
 				E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */,
+				E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */,
+				E5B8D56229E026E300B3D832 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
