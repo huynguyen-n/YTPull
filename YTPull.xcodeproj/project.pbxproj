@@ -21,6 +21,8 @@
 		E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55B29E01FBC00B3D832 /* String.swift */; };
 		E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55E29E0209500B3D832 /* VideoInfo.swift */; };
 		E5B8D56229E026E300B3D832 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D56129E026E300B3D832 /* Data.swift */; };
+		E5B8D56429E5ABCA00B3D832 /* VideoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D56329E5ABCA00B3D832 /* VideoRow.swift */; };
+		E5B8D57329E6ED4800B3D832 /* MediaFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D57229E6ED4800B3D832 /* MediaFormat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		E5B8D55B29E01FBC00B3D832 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E5B8D55E29E0209500B3D832 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
 		E5B8D56129E026E300B3D832 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		E5B8D56329E5ABCA00B3D832 /* VideoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRow.swift; sourceTree = "<group>"; };
+		E5B8D57229E6ED4800B3D832 /* MediaFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaFormat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8D55E29E0209500B3D832 /* VideoInfo.swift */,
+				E5B8D57229E6ED4800B3D832 /* MediaFormat.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8D51829DC2A6E00B3D832 /* ContentView.swift */,
+				E5B8D56329E5ABCA00B3D832 /* VideoRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 			dependencies = (
 			);
 			name = YTPull;
+			packageProductDependencies = (
+			);
 			productName = YTPull;
 			productReference = E5B8D51329DC2A6E00B3D832 /* YTPull.app */;
 			productType = "com.apple.product-type.application";
@@ -286,6 +294,8 @@
 				Base,
 			);
 			mainGroup = E5B8D50A29DC2A6E00B3D832;
+			packageReferences = (
+			);
 			productRefGroup = E5B8D51429DC2A6E00B3D832 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -331,8 +341,10 @@
 			files = (
 				E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */,
 				E5B8D55529E01A8100B3D832 /* ExecuteError.swift in Sources */,
+				E5B8D57329E6ED4800B3D832 /* MediaFormat.swift in Sources */,
 				E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */,
 				E5B8D51929DC2A6E00B3D832 /* ContentView.swift in Sources */,
+				E5B8D56429E5ABCA00B3D832 /* VideoRow.swift in Sources */,
 				E5B8D55029DFC64000B3D832 /* Execute.swift in Sources */,
 				E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */,
 				E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */,
