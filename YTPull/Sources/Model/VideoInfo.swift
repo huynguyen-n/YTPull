@@ -12,8 +12,10 @@ struct VideoInfo: Hashable, Codable, Identifiable {
     var fulltitle: String
     var channel: String
     var url: String
+    var _url: URL? {
+        URL(string: url)
+    }
     var thumbnail: String
-    var formats: [MediaFormat]
 }
 
 extension VideoInfo {
@@ -23,7 +25,6 @@ extension VideoInfo {
             fulltitle: "Shortest Video on Youtube",
             channel: "Mylo the Cat",
             url: "",
-            thumbnail: "https://i.ytimg.com/vi/tPEE9ZwTmy0/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AHUBoAC1gOKAgwIABABGHIgZig2MA8=&rs=AOn4CLDJz0eNEQx0dF1GRMnw4KYcuonwdA",
-            formats: MediaFormat.dummy())
+            thumbnail: "https://i.ytimg.com/vi/tPEE9ZwTmy0/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AHUBoAC1gOKAgwIABABGHIgZig2MA8=&rs=AOn4CLDJz0eNEQx0dF1GRMnw4KYcuonwdA")
     }
 }
