@@ -6,33 +6,103 @@
 //
 
 import SwiftUI
+import AVFoundation
+import Combine
 
 struct ContentView: View {
 
-    @State private var url: String = "https://www.youtube.com/watch?v=tPEE9ZwTmy0"
+    @State private var url: String = ""
     @State private var videos: [VideoInfo] = []
+    @State private var selectedMeida: MediaType = .none
+    @State private var videoInfo: VideoInfo?
+    @State private var isLoading: Bool = false
 
+    // https://www.youtube.com/watch?v=_AASUaRyX-8&ab_channel=LululolaCoffee%2B
     var body: some View {
         VStack {
-            TextField("https://www.youtube.com", text: $url)
-            Button("Get Video Info", action: didTapGetURL).disabled(!url.isValid)
+            VStack {
+                TextField("Paste YouTube URL here", text: $url) { isStarted in
+                    videoInfo = nil
+                    selectedMeida = .none
+                    guard !isStarted else {
+                        return
+                    }
+                    loadURL()
+                }
+                .onChange(of: url, perform: { newValue in
+                    loadURL()
+                })
+                .textFieldStyle(.roundedBorder)
+
+                HStack {
+                    Picker("", selection: $selectedMeida) {
+                        let medias = MediaType.allCases
+                        ForEach(0..<medias.count, id: \.self) { index in
+                            let value = medias[index].value
+                            if !value.isEmpty {
+                                Text(value).tag(medias[index])
+                            }
+                        }
+                    }
+                    .frame(maxWidth: 100)
+                    .labelsHidden()
+                    HStack {
+                        Spacer()
+                        HStack {
+                            if isLoading {
+                                ProgressView().progressViewStyle(.circular).scaleEffect(0.6)
+                            } else {
+                                Image("youtube-squared").resizable().scaledToFit()
+                            }
+                        }
+                        .frame(maxHeight: 48)
+                        Spacer()
+                    }
+                    Button(action: didTapGetURL) {
+                        Text("Download")
+                            .frame(maxWidth: 100)
+                    }
+                }
+                .disabled(videoInfo == nil)
+            }
+            .padding([.horizontal, .top])
             List(videos) { video in
-                VideoRow(video: video)
+                VideoRow(video: video, mediaType: selectedMeida)
             }
             .frame( maxWidth: .infinity)
             .edgesIgnoringSafeArea(.all)
         }
-        .padding()
     }
 
     private func didTapGetURL() {
-        do {
-            let data = try Execute.shared.excute(["-f", "bv/ba", "-j", url])
-            let video = try JSONDecoder().decode(VideoInfo.self, from: data)
-            videos.append(video)
-            url = ""
-        } catch {
-            print(error)
+        guard let videoInfo = videoInfo else {
+            return
+        }
+        videos.append(videoInfo)
+        reset()
+    }
+
+    private func reset() {
+        url = ""
+        videoInfo = nil
+        selectedMeida = .none
+    }
+
+    private func loadURL() {
+        guard url.isValid else {
+            return
+        }
+        isLoading = true
+        DispatchQueue.main.async {
+            do {
+                let data = try Execute.shared.excute(["-f", "b", "-j", url])
+                videoInfo = try JSONDecoder().decode(VideoInfo.self, from: data)
+                selectedMeida = .audio
+                isLoading = false
+            } catch {
+                print("error \(error)")
+                isLoading = false
+            }
         }
     }
 }
