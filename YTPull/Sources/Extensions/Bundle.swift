@@ -8,7 +8,10 @@
 import Foundation
 
 extension Bundle {
-    var YTDLPPath: String? {
-        return Bundle.main.path(forResource: "yt-dlp", ofType: "sh")
+    var YTDLPPath: String {
+        guard let path = Bundle.main.path(forResource: "yt-dlp", ofType: "sh") else {
+            fatalError("Can not found the \"yt-dlp.sh\" file!")
+        }
+        return path
     }
 }

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E5774C1529EFC986005AB1E3 /* CommandsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1429EFC986005AB1E3 /* CommandsTask.swift */; };
+		E5774C1729EFC9DB005AB1E3 /* CommandsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1629EFC9DB005AB1E3 /* CommandsRequest.swift */; };
+		E5774C1929EFCA1D005AB1E3 /* CommandsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1829EFCA1D005AB1E3 /* CommandsResult.swift */; };
+		E5774C1B29EFCA4D005AB1E3 /* CommandsArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1A29EFCA4D005AB1E3 /* CommandsArguments.swift */; };
+		E5774C1F29EFCA96005AB1E3 /* CommandsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1E29EFCA96005AB1E3 /* CommandsPermission.swift */; };
+		E5774C2129EFCAA1005AB1E3 /* CommandsYTDLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C2029EFCAA1005AB1E3 /* CommandsYTDLP.swift */; };
 		E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */; };
 		E5B8D51929DC2A6E00B3D832 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D51829DC2A6E00B3D832 /* ContentView.swift */; };
 		E5B8D51B29DC2A7000B3D832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D51A29DC2A7000B3D832 /* Assets.xcassets */; };
@@ -14,9 +20,8 @@
 		E5B8D52929DC2A7000B3D832 /* YTPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */; };
 		E5B8D53329DC2A7000B3D832 /* YTPullUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */; };
 		E5B8D53529DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */; };
-		E5B8D55029DFC64000B3D832 /* Execute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D54F29DFC64000B3D832 /* Execute.swift */; };
+		E5B8D55029DFC64000B3D832 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D54F29DFC64000B3D832 /* Commands.swift */; };
 		E5B8D55229DFC88200B3D832 /* yt-dlp.sh in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D55129DFC88200B3D832 /* yt-dlp.sh */; };
-		E5B8D55529E01A8100B3D832 /* ExecuteError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55429E01A8100B3D832 /* ExecuteError.swift */; };
 		E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55929E01AC200B3D832 /* Bundle.swift */; };
 		E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55B29E01FBC00B3D832 /* String.swift */; };
 		E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55E29E0209500B3D832 /* VideoInfo.swift */; };
@@ -45,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E5774C1429EFC986005AB1E3 /* CommandsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsTask.swift; sourceTree = "<group>"; };
+		E5774C1629EFC9DB005AB1E3 /* CommandsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsRequest.swift; sourceTree = "<group>"; };
+		E5774C1829EFCA1D005AB1E3 /* CommandsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsResult.swift; sourceTree = "<group>"; };
+		E5774C1A29EFCA4D005AB1E3 /* CommandsArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsArguments.swift; sourceTree = "<group>"; };
+		E5774C1E29EFCA96005AB1E3 /* CommandsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsPermission.swift; sourceTree = "<group>"; };
+		E5774C2029EFCAA1005AB1E3 /* CommandsYTDLP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsYTDLP.swift; sourceTree = "<group>"; };
 		E5B8D51329DC2A6E00B3D832 /* YTPull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTPull.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullApp.swift; sourceTree = "<group>"; };
 		E5B8D51829DC2A6E00B3D832 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,9 +67,8 @@
 		E5B8D52E29DC2A7000B3D832 /* YTPullUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTPullUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITests.swift; sourceTree = "<group>"; };
 		E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E5B8D54F29DFC64000B3D832 /* Execute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Execute.swift; sourceTree = "<group>"; };
+		E5B8D54F29DFC64000B3D832 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		E5B8D55129DFC88200B3D832 /* yt-dlp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "yt-dlp.sh"; sourceTree = "<group>"; };
-		E5B8D55429E01A8100B3D832 /* ExecuteError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteError.swift; sourceTree = "<group>"; };
 		E5B8D55929E01AC200B3D832 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
 		E5B8D55B29E01FBC00B3D832 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E5B8D55E29E0209500B3D832 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
@@ -95,6 +105,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E5774C1D29EFCA87005AB1E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D54F29DFC64000B3D832 /* Commands.swift */,
+				E5774C1429EFC986005AB1E3 /* CommandsTask.swift */,
+				E5774C1629EFC9DB005AB1E3 /* CommandsRequest.swift */,
+				E5774C1829EFCA1D005AB1E3 /* CommandsResult.swift */,
+				E5774C1A29EFCA4D005AB1E3 /* CommandsArguments.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		E5B8D50A29DC2A6E00B3D832 = {
 			isa = PBXGroup;
 			children = (
@@ -168,19 +190,20 @@
 				E5B8D56029E0255800B3D832 /* View */,
 				E5B8D55D29E0208800B3D832 /* Model */,
 				E5B8D55829E01AB800B3D832 /* Extensions */,
-				E5B8D55329E01A5F00B3D832 /* Execute */,
+				E5B8D55329E01A5F00B3D832 /* Commands */,
 				E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		E5B8D55329E01A5F00B3D832 /* Execute */ = {
+		E5B8D55329E01A5F00B3D832 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				E5B8D54F29DFC64000B3D832 /* Execute.swift */,
-				E5B8D55429E01A8100B3D832 /* ExecuteError.swift */,
+				E5774C1D29EFCA87005AB1E3 /* Core */,
+				E5774C1E29EFCA96005AB1E3 /* CommandsPermission.swift */,
+				E5774C2029EFCAA1005AB1E3 /* CommandsYTDLP.swift */,
 			);
-			path = Execute;
+			path = Commands;
 			sourceTree = "<group>";
 		};
 		E5B8D55829E01AB800B3D832 /* Extensions */ = {
@@ -355,17 +378,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5774C1729EFC9DB005AB1E3 /* CommandsRequest.swift in Sources */,
+				E5774C1B29EFCA4D005AB1E3 /* CommandsArguments.swift in Sources */,
 				E5B8D57D29EACCFB00B3D832 /* MediaType.swift in Sources */,
+				E5774C2129EFCAA1005AB1E3 /* CommandsYTDLP.swift in Sources */,
 				E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */,
-				E5B8D55529E01A8100B3D832 /* ExecuteError.swift in Sources */,
 				E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */,
 				E5B8D51929DC2A6E00B3D832 /* ContentView.swift in Sources */,
 				E5B8D57B29E845B500B3D832 /* Export.swift in Sources */,
 				E5B8D56429E5ABCA00B3D832 /* VideoRow.swift in Sources */,
-				E5B8D55029DFC64000B3D832 /* Execute.swift in Sources */,
+				E5774C1529EFC986005AB1E3 /* CommandsTask.swift in Sources */,
+				E5B8D55029DFC64000B3D832 /* Commands.swift in Sources */,
 				E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */,
 				E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */,
 				E5B8D56229E026E300B3D832 /* Data.swift in Sources */,
+				E5774C1929EFCA1D005AB1E3 /* CommandsResult.swift in Sources */,
+				E5774C1F29EFCA96005AB1E3 /* CommandsPermission.swift in Sources */,
 				E5B8D57929E808A500B3D832 /* Extract.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +550,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = YTPull/Resources/YTPull.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -537,7 +566,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -551,6 +580,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = YTPull/Resources/YTPull.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -566,7 +596,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
