@@ -95,9 +95,12 @@ struct ContentView: View {
         isLoading = true
         DispatchQueue.main.async {
             do {
-                let data = try Execute.shared.excute(["-f", "b", "-j", url])
-                videoInfo = try JSONDecoder().decode(VideoInfo.self, from: data)
-                selectedMeida = .audio
+                Commands.Permission.ytdlp.execute()
+                let bestMedia = Commands.YTDLP.bestMedia.execute(for: url)
+                if let data = bestMedia.data {
+                    videoInfo = try JSONDecoder().decode(VideoInfo.self, from: data)
+                    selectedMeida = .audio
+                }
                 isLoading = false
             } catch {
                 print("error \(error)")
