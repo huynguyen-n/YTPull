@@ -14,7 +14,7 @@ extension Commands {
         /// Main function to run command with `Request`
         /// - Parameter request: object to configure for process
         /// - Returns: `Result` object
-        static func run(_ request: Request) -> Result {
+        static func run(_ request: Request, isWaitUntilExit: Bool = false) -> Result {
             let process = request.process()
 
             let outputPipe = Pipe()
@@ -25,6 +25,11 @@ extension Commands {
 
             do {
                 try process.run()
+
+                /// Need to call `waitUntilExit()` for system case like `chmod`, `yt-dlp` won't need.
+                if isWaitUntilExit {
+                    process.waitUntilExit()
+                }
 
                 let outputActual = try outputPipe.fileHandleForReading.readToEnd()
                 let errorActual = try errorPipe.fileHandleForReading.readToEnd()
