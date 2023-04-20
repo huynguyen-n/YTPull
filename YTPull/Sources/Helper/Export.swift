@@ -27,17 +27,10 @@ class Export {
     }
 
     func process(completion: @escaping (Bool, Error?) -> ()) {
-        let downloadsDirectory = FileManager.default.urls(for: .downloadsDirectory, in: .userDomainMask).first!
-        let outputYTPullUrl = downloadsDirectory.appendingPathComponent(directory)
-        let outputUrl = outputYTPullUrl.appendingPathComponent("\(fileName).m4a")
-        if FileManager.default.fileExists(atPath: outputUrl.path) {
-            try? FileManager.default.removeItem(atPath: outputUrl.path)
-        } else {
-            try? FileManager.default.createDirectory(at: outputYTPullUrl, withIntermediateDirectories: true)
-        }
+        let file = File(name: fileName, mediaType: .audio, ext: "m4a")
         exportSession = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetPassthrough)!
         exportSession.outputFileType = AVFileType.m4a
-        exportSession.outputURL = outputUrl
+        exportSession.outputURL = file.path
         exportSession.exportAsynchronously {
             switch self.exportSession.status {
             case .completed:

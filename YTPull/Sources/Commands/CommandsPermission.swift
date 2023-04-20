@@ -25,7 +25,7 @@ extension Commands {
 
         @discardableResult
         func execute(for URL: String? = nil) -> Commands.Result {
-            return Commands.Task.run(request)
+            return Commands.Task.run(request, isWaitUntilExit: true)
         }
     }
 }

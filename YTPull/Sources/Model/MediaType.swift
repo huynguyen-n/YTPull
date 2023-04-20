@@ -5,6 +5,7 @@
 //  Created by Huy Nguyen on 15/04/2023.
 //
 
+import AVFoundation
 import Foundation
 
 enum MediaType: CaseIterable {
@@ -20,6 +21,17 @@ enum MediaType: CaseIterable {
             return "Video"
         case .none:
             return ""
+        }
+    }
+
+    var type: UTType {
+        switch self {
+        case .audio:
+            return .mpeg4Audio
+        case .video:
+            return .mpeg4Movie
+        case .none:
+            return .png
         }
     }
 }

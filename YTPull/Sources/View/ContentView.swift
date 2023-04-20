@@ -11,7 +11,7 @@ import Combine
 
 struct ContentView: View {
 
-    @State private var url: String = ""
+    @State private var url: String = "https://www.youtube.com/watch?v=_AASUaRyX-8"
     @State private var videos: [VideoInfo] = []
     @State private var selectedMeida: MediaType = .none
     @State private var videoInfo: VideoInfo?
@@ -79,7 +79,6 @@ struct ContentView: View {
             return
         }
         videos.append(videoInfo)
-        reset()
     }
 
     private func reset() {
