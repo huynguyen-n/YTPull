@@ -12,6 +12,8 @@ struct VideoRow: View {
     @State var video: VideoInfo
     @State var mediaType: MediaType
     @State var downloadAmount: Float = 0.0
+    @StateObject var downloader = Downloader()
+    @State private var isError = false
 
     var body: some View {
         VStack {
@@ -32,9 +34,18 @@ struct VideoRow: View {
                     Text(video.channel)
                         .font(.subheadline)
                         .fontWeight(.light)
-                    Text(String(format: "%.1f%%", downloadAmount))
-                        .font(.caption2)
-                        .fontWeight(.light)
+                    switch mediaType {
+                    case .audio:
+                        Text(String(format: "%.1f%%", downloadAmount))
+                            .font(.caption2)
+                            .fontWeight(.light)
+                    case .video:
+                        Text(String(format: "%.1f%%", downloader.progress))
+                            .font(.caption2)
+                            .fontWeight(.light)
+                    case .none:
+                        EmptyView()
+                    }
                 })
                 .padding(.trailing)
                 Spacer()
@@ -46,7 +57,23 @@ struct VideoRow: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .onAppear {
-            try? extractAudio()
+            do {
+                switch mediaType {
+                case .audio:
+                    try extractAudio()
+                case .video:
+                    try downloader.start(video)
+                case .none:
+                    break
+                }
+            } catch {
+                isError = true
+            }
+        }
+        .alert(isPresented: $downloader.isShowAlert) {
+            Alert(title: Text("Error"),
+                  message: Text(downloader.alertMessage),
+                  dismissButton: .default(Text("OK")))
         }
     }
 
