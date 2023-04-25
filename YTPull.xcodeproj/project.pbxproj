@@ -1,0 +1,725 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E560793F29F144B000501A43 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560793E29F144B000501A43 /* FileManager.swift */; };
+		E560794129F1472900501A43 /* Extracter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560794029F1472900501A43 /* Extracter.swift */; };
+		E560794329F147B000501A43 /* Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E560794229F147B000501A43 /* Responder.swift */; };
+		E5774C1529EFC986005AB1E3 /* CommandsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1429EFC986005AB1E3 /* CommandsTask.swift */; };
+		E5774C1729EFC9DB005AB1E3 /* CommandsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1629EFC9DB005AB1E3 /* CommandsRequest.swift */; };
+		E5774C1929EFCA1D005AB1E3 /* CommandsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1829EFCA1D005AB1E3 /* CommandsResult.swift */; };
+		E5774C1B29EFCA4D005AB1E3 /* CommandsArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1A29EFCA4D005AB1E3 /* CommandsArguments.swift */; };
+		E5774C1F29EFCA96005AB1E3 /* CommandsPermission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C1E29EFCA96005AB1E3 /* CommandsPermission.swift */; };
+		E5774C2129EFCAA1005AB1E3 /* CommandsYTDLP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C2029EFCAA1005AB1E3 /* CommandsYTDLP.swift */; };
+		E5774C2429EFDA48005AB1E3 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5774C2329EFDA48005AB1E3 /* Downloader.swift */; };
+		E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */; };
+		E5B8D51929DC2A6E00B3D832 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D51829DC2A6E00B3D832 /* ContentView.swift */; };
+		E5B8D51B29DC2A7000B3D832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D51A29DC2A7000B3D832 /* Assets.xcassets */; };
+		E5B8D51E29DC2A7000B3D832 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D51D29DC2A7000B3D832 /* Preview Assets.xcassets */; };
+		E5B8D52929DC2A7000B3D832 /* YTPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */; };
+		E5B8D53329DC2A7000B3D832 /* YTPullUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */; };
+		E5B8D53529DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */; };
+		E5B8D55029DFC64000B3D832 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D54F29DFC64000B3D832 /* Commands.swift */; };
+		E5B8D55229DFC88200B3D832 /* yt-dlp.sh in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D55129DFC88200B3D832 /* yt-dlp.sh */; };
+		E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55929E01AC200B3D832 /* Bundle.swift */; };
+		E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55B29E01FBC00B3D832 /* String.swift */; };
+		E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55E29E0209500B3D832 /* VideoInfo.swift */; };
+		E5B8D56429E5ABCA00B3D832 /* VideoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D56329E5ABCA00B3D832 /* VideoRow.swift */; };
+		E5B8D57D29EACCFB00B3D832 /* MediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D57C29EACCFB00B3D832 /* MediaType.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E5B8D52529DC2A7000B3D832 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5B8D50B29DC2A6E00B3D832 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B8D51229DC2A6E00B3D832;
+			remoteInfo = YTPull;
+		};
+		E5B8D52F29DC2A7000B3D832 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E5B8D50B29DC2A6E00B3D832 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E5B8D51229DC2A6E00B3D832;
+			remoteInfo = YTPull;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E560793E29F144B000501A43 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		E560794029F1472900501A43 /* Extracter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extracter.swift; sourceTree = "<group>"; };
+		E560794229F147B000501A43 /* Responder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responder.swift; sourceTree = "<group>"; };
+		E5774C1429EFC986005AB1E3 /* CommandsTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsTask.swift; sourceTree = "<group>"; };
+		E5774C1629EFC9DB005AB1E3 /* CommandsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsRequest.swift; sourceTree = "<group>"; };
+		E5774C1829EFCA1D005AB1E3 /* CommandsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsResult.swift; sourceTree = "<group>"; };
+		E5774C1A29EFCA4D005AB1E3 /* CommandsArguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsArguments.swift; sourceTree = "<group>"; };
+		E5774C1E29EFCA96005AB1E3 /* CommandsPermission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsPermission.swift; sourceTree = "<group>"; };
+		E5774C2029EFCAA1005AB1E3 /* CommandsYTDLP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandsYTDLP.swift; sourceTree = "<group>"; };
+		E5774C2329EFDA48005AB1E3 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
+		E5B8D51329DC2A6E00B3D832 /* YTPull.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTPull.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullApp.swift; sourceTree = "<group>"; };
+		E5B8D51829DC2A6E00B3D832 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E5B8D51A29DC2A7000B3D832 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5B8D51D29DC2A7000B3D832 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E5B8D51F29DC2A7000B3D832 /* YTPull.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YTPull.entitlements; sourceTree = "<group>"; };
+		E5B8D52429DC2A7000B3D832 /* YTPullTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTPullTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullTests.swift; sourceTree = "<group>"; };
+		E5B8D52E29DC2A7000B3D832 /* YTPullUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTPullUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITests.swift; sourceTree = "<group>"; };
+		E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E5B8D54F29DFC64000B3D832 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
+		E5B8D55129DFC88200B3D832 /* yt-dlp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "yt-dlp.sh"; sourceTree = "<group>"; };
+		E5B8D55929E01AC200B3D832 /* Bundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bundle.swift; sourceTree = "<group>"; };
+		E5B8D55B29E01FBC00B3D832 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E5B8D55E29E0209500B3D832 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
+		E5B8D56329E5ABCA00B3D832 /* VideoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRow.swift; sourceTree = "<group>"; };
+		E5B8D57429E7B01C00B3D832 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E5B8D57C29EACCFB00B3D832 /* MediaType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaType.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5B8D51029DC2A6E00B3D832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B8D52129DC2A7000B3D832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B8D52B29DC2A7000B3D832 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E560793D29F1448600501A43 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E5774C2329EFDA48005AB1E3 /* Downloader.swift */,
+				E560793E29F144B000501A43 /* FileManager.swift */,
+				E560794029F1472900501A43 /* Extracter.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		E5774C1D29EFCA87005AB1E3 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D54F29DFC64000B3D832 /* Commands.swift */,
+				E5774C1429EFC986005AB1E3 /* CommandsTask.swift */,
+				E5774C1629EFC9DB005AB1E3 /* CommandsRequest.swift */,
+				E5774C1829EFCA1D005AB1E3 /* CommandsResult.swift */,
+				E5774C1A29EFCA4D005AB1E3 /* CommandsArguments.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E5B8D50A29DC2A6E00B3D832 = {
+			isa = PBXGroup;
+			children = (
+				E5B8D51529DC2A6E00B3D832 /* YTPull */,
+				E5B8D52729DC2A7000B3D832 /* YTPullTests */,
+				E5B8D53129DC2A7000B3D832 /* YTPullUITests */,
+				E5B8D51429DC2A6E00B3D832 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E5B8D51429DC2A6E00B3D832 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D51329DC2A6E00B3D832 /* YTPull.app */,
+				E5B8D52429DC2A7000B3D832 /* YTPullTests.xctest */,
+				E5B8D52E29DC2A7000B3D832 /* YTPullUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E5B8D51529DC2A6E00B3D832 /* YTPull */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D57429E7B01C00B3D832 /* Info.plist */,
+				E5B8D54829DD196300B3D832 /* Sources */,
+				E5B8D54729DD194400B3D832 /* Resources */,
+			);
+			path = YTPull;
+			sourceTree = "<group>";
+		};
+		E5B8D51C29DC2A7000B3D832 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D51D29DC2A7000B3D832 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E5B8D52729DC2A7000B3D832 /* YTPullTests */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */,
+			);
+			path = YTPullTests;
+			sourceTree = "<group>";
+		};
+		E5B8D53129DC2A7000B3D832 /* YTPullUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */,
+				E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */,
+			);
+			path = YTPullUITests;
+			sourceTree = "<group>";
+		};
+		E5B8D54729DD194400B3D832 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D55129DFC88200B3D832 /* yt-dlp.sh */,
+				E5B8D51C29DC2A7000B3D832 /* Preview Content */,
+				E5B8D51F29DC2A7000B3D832 /* YTPull.entitlements */,
+				E5B8D51A29DC2A7000B3D832 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E5B8D54829DD196300B3D832 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E560793D29F1448600501A43 /* Helper */,
+				E5B8D56029E0255800B3D832 /* View */,
+				E5B8D55D29E0208800B3D832 /* Model */,
+				E5B8D55829E01AB800B3D832 /* Extensions */,
+				E5B8D55329E01A5F00B3D832 /* Commands */,
+				E5B8D51629DC2A6E00B3D832 /* YTPullApp.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E5B8D55329E01A5F00B3D832 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				E5774C1D29EFCA87005AB1E3 /* Core */,
+				E5774C1E29EFCA96005AB1E3 /* CommandsPermission.swift */,
+				E5774C2029EFCAA1005AB1E3 /* CommandsYTDLP.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		E5B8D55829E01AB800B3D832 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D55929E01AC200B3D832 /* Bundle.swift */,
+				E5B8D55B29E01FBC00B3D832 /* String.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E5B8D55D29E0208800B3D832 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D55E29E0209500B3D832 /* VideoInfo.swift */,
+				E5B8D57C29EACCFB00B3D832 /* MediaType.swift */,
+				E560794229F147B000501A43 /* Responder.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E5B8D56029E0255800B3D832 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8D51829DC2A6E00B3D832 /* ContentView.swift */,
+				E5B8D56329E5ABCA00B3D832 /* VideoRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E5B8D51229DC2A6E00B3D832 /* YTPull */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5B8D53829DC2A7000B3D832 /* Build configuration list for PBXNativeTarget "YTPull" */;
+			buildPhases = (
+				E5B8D50F29DC2A6E00B3D832 /* Sources */,
+				E5B8D51029DC2A6E00B3D832 /* Frameworks */,
+				E5B8D51129DC2A6E00B3D832 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YTPull;
+			packageProductDependencies = (
+			);
+			productName = YTPull;
+			productReference = E5B8D51329DC2A6E00B3D832 /* YTPull.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E5B8D52329DC2A7000B3D832 /* YTPullTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5B8D53B29DC2A7000B3D832 /* Build configuration list for PBXNativeTarget "YTPullTests" */;
+			buildPhases = (
+				E5B8D52029DC2A7000B3D832 /* Sources */,
+				E5B8D52129DC2A7000B3D832 /* Frameworks */,
+				E5B8D52229DC2A7000B3D832 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5B8D52629DC2A7000B3D832 /* PBXTargetDependency */,
+			);
+			name = YTPullTests;
+			productName = YTPullTests;
+			productReference = E5B8D52429DC2A7000B3D832 /* YTPullTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E5B8D52D29DC2A7000B3D832 /* YTPullUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E5B8D53E29DC2A7000B3D832 /* Build configuration list for PBXNativeTarget "YTPullUITests" */;
+			buildPhases = (
+				E5B8D52A29DC2A7000B3D832 /* Sources */,
+				E5B8D52B29DC2A7000B3D832 /* Frameworks */,
+				E5B8D52C29DC2A7000B3D832 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E5B8D53029DC2A7000B3D832 /* PBXTargetDependency */,
+			);
+			name = YTPullUITests;
+			productName = YTPullUITests;
+			productReference = E5B8D52E29DC2A7000B3D832 /* YTPullUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E5B8D50B29DC2A6E00B3D832 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					E5B8D51229DC2A6E00B3D832 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					E5B8D52329DC2A7000B3D832 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = E5B8D51229DC2A6E00B3D832;
+					};
+					E5B8D52D29DC2A7000B3D832 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = E5B8D51229DC2A6E00B3D832;
+					};
+				};
+			};
+			buildConfigurationList = E5B8D50E29DC2A6E00B3D832 /* Build configuration list for PBXProject "YTPull" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E5B8D50A29DC2A6E00B3D832;
+			packageReferences = (
+			);
+			productRefGroup = E5B8D51429DC2A6E00B3D832 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E5B8D51229DC2A6E00B3D832 /* YTPull */,
+				E5B8D52329DC2A7000B3D832 /* YTPullTests */,
+				E5B8D52D29DC2A7000B3D832 /* YTPullUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E5B8D51129DC2A6E00B3D832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B8D55229DFC88200B3D832 /* yt-dlp.sh in Resources */,
+				E5B8D51E29DC2A7000B3D832 /* Preview Assets.xcassets in Resources */,
+				E5B8D51B29DC2A7000B3D832 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B8D52229DC2A7000B3D832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B8D52C29DC2A7000B3D832 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E5B8D50F29DC2A6E00B3D832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5774C1729EFC9DB005AB1E3 /* CommandsRequest.swift in Sources */,
+				E5774C1B29EFCA4D005AB1E3 /* CommandsArguments.swift in Sources */,
+				E5B8D57D29EACCFB00B3D832 /* MediaType.swift in Sources */,
+				E5774C2129EFCAA1005AB1E3 /* CommandsYTDLP.swift in Sources */,
+				E5B8D55C29E01FBC00B3D832 /* String.swift in Sources */,
+				E5B8D55A29E01AC200B3D832 /* Bundle.swift in Sources */,
+				E5B8D51929DC2A6E00B3D832 /* ContentView.swift in Sources */,
+				E560794129F1472900501A43 /* Extracter.swift in Sources */,
+				E5B8D56429E5ABCA00B3D832 /* VideoRow.swift in Sources */,
+				E560793F29F144B000501A43 /* FileManager.swift in Sources */,
+				E560794329F147B000501A43 /* Responder.swift in Sources */,
+				E5774C1529EFC986005AB1E3 /* CommandsTask.swift in Sources */,
+				E5B8D55029DFC64000B3D832 /* Commands.swift in Sources */,
+				E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */,
+				E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */,
+				E5774C2429EFDA48005AB1E3 /* Downloader.swift in Sources */,
+				E5774C1929EFCA1D005AB1E3 /* CommandsResult.swift in Sources */,
+				E5774C1F29EFCA96005AB1E3 /* CommandsPermission.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B8D52029DC2A7000B3D832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B8D52929DC2A7000B3D832 /* YTPullTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E5B8D52A29DC2A7000B3D832 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E5B8D53529DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift in Sources */,
+				E5B8D53329DC2A7000B3D832 /* YTPullUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E5B8D52629DC2A7000B3D832 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5B8D51229DC2A6E00B3D832 /* YTPull */;
+			targetProxy = E5B8D52529DC2A7000B3D832 /* PBXContainerItemProxy */;
+		};
+		E5B8D53029DC2A7000B3D832 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E5B8D51229DC2A6E00B3D832 /* YTPull */;
+			targetProxy = E5B8D52F29DC2A7000B3D832 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E5B8D53629DC2A7000B3D832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E5B8D53729DC2A7000B3D832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		E5B8D53929DC2A7000B3D832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YTPull/Resources/YTPull.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YTPull/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YTPull/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E5B8D53A29DC2A7000B3D832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = YTPull/Resources/YTPull.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"YTPull/Resources/Preview Content\"";
+				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = YTPull/Info.plist;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		E5B8D53C29DC2A7000B3D832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPullTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YTPull.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YTPull";
+			};
+			name = Debug;
+		};
+		E5B8D53D29DC2A7000B3D832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPullTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/YTPull.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/YTPull";
+			};
+			name = Release;
+		};
+		E5B8D53F29DC2A7000B3D832 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPullUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = YTPull;
+			};
+			name = Debug;
+		};
+		E5B8D54029DC2A7000B3D832 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPullUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = YTPull;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E5B8D50E29DC2A6E00B3D832 /* Build configuration list for PBXProject "YTPull" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B8D53629DC2A7000B3D832 /* Debug */,
+				E5B8D53729DC2A7000B3D832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5B8D53829DC2A7000B3D832 /* Build configuration list for PBXNativeTarget "YTPull" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B8D53929DC2A7000B3D832 /* Debug */,
+				E5B8D53A29DC2A7000B3D832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5B8D53B29DC2A7000B3D832 /* Build configuration list for PBXNativeTarget "YTPullTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B8D53C29DC2A7000B3D832 /* Debug */,
+				E5B8D53D29DC2A7000B3D832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E5B8D53E29DC2A7000B3D832 /* Build configuration list for PBXNativeTarget "YTPullUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5B8D53F29DC2A7000B3D832 /* Debug */,
+				E5B8D54029DC2A7000B3D832 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E5B8D50B29DC2A6E00B3D832 /* Project object */;
+}
