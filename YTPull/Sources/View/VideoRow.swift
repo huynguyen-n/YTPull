@@ -11,9 +11,9 @@ struct VideoRow: View {
 
     @State var video: VideoInfo
     @State var mediaType: MediaType
-    @State var downloadAmount: Float = 0.0
     @StateObject var downloader = Downloader()
-    @State private var isError = false
+    @StateObject var extracter = Extracter()
+    @State var alertMessage = ""
 
     var body: some View {
         VStack {
@@ -36,9 +36,16 @@ struct VideoRow: View {
                         .fontWeight(.light)
                     switch mediaType {
                     case .audio:
-                        Text(String(format: "%.1f%%", downloadAmount))
-                            .font(.caption2)
-                            .fontWeight(.light)
+                        if !alertMessage.isEmpty {
+                            Text(String(format: alertMessage, extracter.progress))
+                                .font(.caption2)
+                                .fontWeight(.light)
+                                .foregroundColor(Color.red)
+                        } else {
+                            Text(String(format: "%.1f%%", extracter.progress))
+                                .font(.caption2)
+                                .fontWeight(.light)
+                        }
                     case .video:
                         Text(String(format: "%.1f%%", downloader.progress))
                             .font(.caption2)
@@ -60,63 +67,21 @@ struct VideoRow: View {
             do {
                 switch mediaType {
                 case .audio:
-                    try extractAudio()
+                    _ = extracter.process(with: video)
+                        .subscribe(on: DispatchQueue.main)
+                        .sink { completion in
+                            if case .failure(let error) = completion {
+                                alertMessage = error.localizedDescription
+                            }
+                        } receiveValue: { _ in }
                 case .video:
                     try downloader.start(video)
                 case .none:
                     break
                 }
             } catch {
-                isError = true
-            }
-        }
-        .alert(isPresented: $downloader.isShowAlert) {
-            Alert(title: Text("Error"),
-                  message: Text(downloader.alertMessage),
-                  dismissButton: .default(Text("OK")))
-        }
-    }
-
-    private func extractAudio() throws {
-        guard let url = video._url else {
-            throw ExtractError.urlInvalidation
-        }
-        var store = [AnyCancellable]()
-        var export: Export?
-
-        Timer.publish(every: 0.5, on: .main, in: .common)
-            .autoconnect()
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { _ in
-                guard let progress = export?.exportSession.progress, progress > 0.5 else {
-                    downloadAmount += 0.1
-                    return
-                }
-                downloadAmount = progress * 100
-            })
-            .store(in: &store)
-
-        let extract = ExtractImpl(url: url)
-        extract.process { callBackComposition in
-            do {
-                let composition = try callBackComposition()
-                export = Export(composition: composition, fileName: video.fulltitle)
-                export?.process { isSuccess, error in
-                    store.removeAll()
-                    guard isSuccess else {
-                        return
-                    }
-                    downloadAmount = 100
-                }
-            } catch let error {
                 print(error)
             }
         }
-    }
-}
-
-struct VideoRow_Previews: PreviewProvider {
-    static var previews: some View {
-        VideoRow(video: .dummy(), mediaType: .none)
     }
 }

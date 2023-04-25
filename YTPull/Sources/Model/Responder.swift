@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum ResponderStatus {
+    case idle, loading, success, failure
+}
+
+struct Responder {
+    var alertMessage = ""
+    var status: ResponderStatus = .idle
+}

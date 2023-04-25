@@ -17,14 +17,3 @@ struct VideoInfo: Hashable, Codable, Identifiable {
     }
     var thumbnail: String
 }
-
-extension VideoInfo {
-    static func dummy() -> VideoInfo {
-        .init(
-            id: "tPEE9ZwTmy0",
-            fulltitle: "Shortest Video on Youtube",
-            channel: "Mylo the Cat",
-            url: "",
-            thumbnail: "https://i.ytimg.com/vi/tPEE9ZwTmy0/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AHUBoAC1gOKAgwIABABGHIgZig2MA8=&rs=AOn4CLDJz0eNEQx0dF1GRMnw4KYcuonwdA")
-    }
-}
