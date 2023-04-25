@@ -4,8 +4,8 @@ Simple macOS App for downloading YouTube videos and audio, powered with SwiftUI 
 **YTPull** is a free and open source macOS application that lets you download YouTube videos and audio using SwiftUI and Combine. It provides a modern and responsive UI, advanced downloading capabilities, and seamless integration with macOS technologies. With **YTPull**, you can easily grab your favorite YouTube media for offline use or other purposes.
 
 ## Features
-- [ ] Download videos from Youtube URL. 
-- [ ] Download videos from playlists or channels.
+- [x] Download videos from Youtube URL. 
+- [x] Download videos from playlists or channels.
 - [x] Extract and export best audio from video.
 - [ ] Auto copy/paste Youtube URL.
 
