@@ -11,7 +11,7 @@ import Foundation
 enum MediaType: CaseIterable {
     case audio
     case video
-    case none
+    case none // can not be select, use for hidden label
 
     var value: String {
         switch self {

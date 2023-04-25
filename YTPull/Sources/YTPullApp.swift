@@ -42,6 +42,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         popover.behavior = .transient
         popover.contentViewController = NSHostingController(rootView: ContentView())
         popover.contentViewController?.view.window?.makeKey()
+        Commands.Permission.ytdlp.execute()
     }
 
     @objc private func didTapStatusButton() {

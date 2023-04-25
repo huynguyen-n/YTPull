@@ -18,6 +18,9 @@ extension Commands {
         /// - Returns: `Process` object to use for `try process.run()`
         func process() -> Process {
             let process = Process()
+            if process.isRunning {
+                process.terminate()
+            }
             process.executableURL = URL(fileURLWithPath: executableURL)
             if let environment = environment {
                 process.environment = environment

@@ -11,13 +11,18 @@ import Combine
 
 struct ContentView: View {
 
+    #if DEBUG
     @State private var url: String = "https://www.youtube.com/watch?v=_AASUaRyX-8"
+    #else
+    @State private var url: String = ""
+    #endif
+
     @State private var videos: [VideoInfo] = []
     @State private var selectedMeida: MediaType = .none
     @State private var videoInfo: VideoInfo?
     @State private var isLoading: Bool = false
+    @State private var alertMessage: String = ""
 
-    // https://www.youtube.com/watch?v=_AASUaRyX-8&ab_channel=LululolaCoffee%2B
     var body: some View {
         VStack {
             VStack {
@@ -29,9 +34,6 @@ struct ContentView: View {
                     }
                     loadURL()
                 }
-                .onChange(of: url, perform: { newValue in
-                    loadURL()
-                })
                 .textFieldStyle(.roundedBorder)
 
                 HStack {
@@ -41,6 +43,8 @@ struct ContentView: View {
                             let value = medias[index].value
                             if !value.isEmpty {
                                 Text(value).tag(medias[index])
+                            } else {
+                                EmptyView()
                             }
                         }
                     }
@@ -51,14 +55,17 @@ struct ContentView: View {
                         HStack {
                             if isLoading {
                                 ProgressView().progressViewStyle(.circular).scaleEffect(0.6)
-                            } else {
+                            } else if alertMessage.isEmpty {
                                 Image("youtube-squared").resizable().scaledToFit()
+                            } else {
+                                Text(alertMessage)
+                                    .foregroundColor(Color.red)
                             }
                         }
                         .frame(maxHeight: 48)
                         Spacer()
                     }
-                    Button(action: didTapGetURL) {
+                    Button(action: didTapDownload) {
                         Text("Download")
                             .frame(maxWidth: 100)
                     }
@@ -74,17 +81,32 @@ struct ContentView: View {
         }
     }
 
-    private func didTapGetURL() {
-        guard let videoInfo = videoInfo else {
-            return
-        }
-        videos.append(videoInfo)
+    enum VideoInfoError: Error, LocalizedError {
+        case invalidData
+        case alreadyDownload
     }
 
-    private func reset() {
-        url = ""
-        videoInfo = nil
-        selectedMeida = .none
+    private func validateVideo() throws -> VideoInfo {
+        guard let videoInfo else {
+            throw VideoInfoError.invalidData
+        }
+
+        guard !videos.contains(where: { $0.id == videoInfo.id }) else {
+            throw VideoInfoError.alreadyDownload
+        }
+
+        return videoInfo
+    }
+
+    private func didTapDownload() {
+        do {
+            let _videoInfo = try validateVideo()
+            videos.append(_videoInfo)
+            url = ""
+            videoInfo = nil
+        } catch {
+            alertMessage = error.localizedDescription
+        }
     }
 
     private func loadURL() {
@@ -94,7 +116,6 @@ struct ContentView: View {
         isLoading = true
         DispatchQueue.main.async {
             do {
-                Commands.Permission.ytdlp.execute()
                 let bestMedia = Commands.YTDLP.bestMedia.execute(for: url)
                 if let data = bestMedia.data {
                     videoInfo = try JSONDecoder().decode(VideoInfo.self, from: data)
