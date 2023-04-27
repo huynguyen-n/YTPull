@@ -14,34 +14,11 @@ There are multiple ways to install the app.
 
 ### Download the App
 The easiest way to install **YTPull** is.
-1. Download the latest release as an app.
+1. Download the latest version on [release page](https://github.com/huynguyen-n/YTPull/releases).
 2. Unzip the download by double-click on it.
 
-Notes: In case you don't see **YTPull** appear on your status bar. Let's continue to more `YTPull.app` into the `Applications` folder.
+> Notes: In case you don't see **YTPull** appear on menu bar (because of 'unidentified developer'). Let's right click on the app and then select **Open**. A dialog will appear, click again on **Open**. From now on you can always open the app without needing to right click on it. More info: [Apple Support](https://support.apple.com/kb/PH25088).
 
-### Homebrew Cask
-You can also install **YTPull** using Homebrew Cask, a package manager for macOS:
-1. Install Homebrew (if not already installed)
-
-Open a terminal window on your macOS device.
-Enter the following command and press Enter to install Homebrew if you haven't installed it already:
-
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-Follow the on-screen prompts to complete the installation of Homebrew.
-
-2. Install **YTPull** with Homebrew Cask
-
-In the same terminal window, enter the following command and press Enter to install **YTPull** using Homebrew Cask:
-```
-brew install --cask ytpull
-```
-Homebrew Cask will download and install **YTPull** on your macOS device.
-
-3. Launch **YTPull**
-
-After the installation is complete, you can launch **YTPull** by searching for it in the Applications folder or by typing "YTPull" in Spotlight (Cmd + Space) and hitting Enter.
 
 ### Build from Source
 **Xcode 14 and Swift 5 is required**
