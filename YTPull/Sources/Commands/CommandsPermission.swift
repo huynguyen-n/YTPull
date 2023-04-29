@@ -7,10 +7,6 @@
 
 import Foundation
 
-private let kRunYTDLPPermission = "kRunYTDLPPermission"
-
-private let kPermissionAllowed: Commands.Result = .init(statusCode: 9)
-
 extension Commands {
     /// Permissiong for specific file case
     enum Permission: CommandsIO {
@@ -31,11 +27,7 @@ extension Commands {
 
         @discardableResult
         func execute(for URL: String? = nil) -> Commands.Result {
-            if !UserDefaults.standard.bool(forKey: kRunYTDLPPermission) {
-                let result = Commands.Task.run(request, isWaitUntilExit: true)
-                UserDefaults.standard.set(result.statusCode == 0, forKey: kRunYTDLPPermission)
-            }
-            return kPermissionAllowed
+            return Commands.Task.run(request, isWaitUntilExit: true)
         }
     }
 }
