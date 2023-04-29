@@ -12,7 +12,7 @@ import Combine
 struct ContentView: View {
 
     #if DEBUG
-    @State private var url: String = "https://www.youtube.com/watch?v=_AASUaRyX-8"
+    @State private var url: String = "https://www.youtube.com/shorts/OlKUD-dJulM"
     #else
     @State private var url: String = ""
     #endif
