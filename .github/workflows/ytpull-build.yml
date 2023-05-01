@@ -11,5 +11,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Run build script
-        run: scripts && ./build.sh --verbose
+        run: cd scripts && ./build.sh --verbose
         shell: bash
