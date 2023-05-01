@@ -10,6 +10,6 @@ jobs:
     name: Run on macOS
     runs-on: macos-latest
     steps:
+      - run: ls
       - name: Run build script
-        run: echo "$PWD"
-        shell: bash
+        run: scripts/build.sh
