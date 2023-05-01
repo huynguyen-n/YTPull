@@ -1,0 +1,15 @@
+name: Run scripts commands
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  Run-on-macOS:
+    name: Run on macOS
+    runs-on: macos-latest
+    steps:
+      - name: Run build script
+        run: ./scripts/build.sh --verbose
+        shell: bash
