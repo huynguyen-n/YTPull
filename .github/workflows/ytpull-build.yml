@@ -10,6 +10,7 @@ jobs:
     name: Run on macOS
     runs-on: macos-latest
     steps:
+      - uses: actions/checkout@v2
       - run: ls
       - name: Run build script
-        run: scripts/build.sh
+        run: cd scripts && ./build.sh --verbose
