@@ -40,7 +40,8 @@ The easiest way to install **YTPull** is.
 2. Unzip the download by double-click on it.
 
 > Notes: In case you don't see **YTPull** appear on menu bar (because of 'unidentified developer'). Let's right click on the app and then select **Open**. A dialog will appear, click again on **Open**. From now on you can always open the app without needing to right click on it. More info: [Apple Support](https://support.apple.com/kb/PH25088).
-
+>
+> https://user-images.githubusercontent.com/21701724/235424746-9eeb4e84-3d01-4878-99f9-aef13f0c3334.mov
 
 ### Build from Source
 **Xcode 14 and Swift 5 is required**
