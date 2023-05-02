@@ -1,0 +1,26 @@
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build_release:
+    name: Build & Release YTPull
+    runs-on: macos-latest
+    steps:
+      - name: Setup
+        uses: actions/checkout@v2
+      - name: Build
+        run: cd scripts && ./build.sh --verbose
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: scripts/build/YTPull.zip
+          generate_release_notes: true
+      
+
+      
+    
