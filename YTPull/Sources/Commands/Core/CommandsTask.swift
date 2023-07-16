@@ -34,6 +34,10 @@ extension Commands {
                 let outputActual = try outputPipe.fileHandleForReading.readToEnd()
                 let errorActual = try errorPipe.fileHandleForReading.readToEnd()
 
+                guard !process.isRunning else {
+                    /// Task is running, can't use `process.terminationStatus`
+                    return Result(statusCode: .zero, data: errorActual)
+                }
                 if process.terminationStatus == EXIT_SUCCESS {
                     return Result(statusCode: process.terminationStatus, data: outputActual)
                 }

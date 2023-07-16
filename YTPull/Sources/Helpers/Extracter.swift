@@ -20,16 +20,15 @@ enum ExtractError: Error {
 
 final class Extracter: ObservableObject {
 
-
     @Published private(set) var progress: CGFloat = 0
 
     private var responder: Responder = Responder()
     private var cancellabel: AnyCancellable?
     private let timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
-    func process(with videoInfo: VideoInfo) -> Future<Responder, ExtractError> {
+    func process(with video: VideoEntity) -> Future<Responder, ExtractError> {
         return Future { [weak self] promise in
-            self?.cancellabel = self?.composition(videoInfo._url)
+            self?.cancellabel = self?.composition(URL(string: video.url))
                 .subscribe(on: DispatchQueue.main)
                 .sink { [weak self] completion in
                     guard let self else { return }
@@ -40,7 +39,7 @@ final class Extracter: ObservableObject {
                     promise(.success(self.responder))
                 } receiveValue: { [weak self] composition in
                     guard let self else { return }
-                    let file = File(name: videoInfo.fulltitle, mediaType: .audio, ext: "m4a")
+                    let file = File(name: video.title, mediaType: .audio, ext: "m4a")
                     guard let assetExportSession = self.assetExportSession(composition, file: file) else {
                         return promise(.failure(.unknownError))
                     }
@@ -51,6 +50,7 @@ final class Extracter: ObservableObject {
                             return promise(.failure(.unknownError))
                         }
                         self.responder.status = .success
+                        VideoStore.shared.update(storedURL: file.path.absoluteString, for: video)
                     }
                 }
         }

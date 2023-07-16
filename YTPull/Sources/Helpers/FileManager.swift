@@ -7,6 +7,8 @@
 
 import Foundation
 
+var Files: FileManager { FileManager.default }
+
 struct File {
     enum FileError: Error {
         case notFoundYTPull
@@ -29,12 +31,12 @@ struct File {
         FileManager.default
     }
 
-    private var downloads: URL {
-        fileManager.urls(for: .downloadsDirectory, in: .userDomainMask).first!
+    private var document: URL {
+        fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
     }
 
     private var application: URL {
-        downloads.appending(path: "YTPull")
+        document.appending(path: "YTPull").appending(path: mediaType == .video ? "Videos" : "Audios")
     }
 
     var path: URL {
@@ -49,5 +51,14 @@ struct File {
 
     private var isExist: Bool {
         fileManager.fileExists(atPath: path.path())
+    }
+}
+
+extension FileManager {
+    @discardableResult
+    func createDirectoryIfNeeded(at url: URL) -> Bool {
+        guard !fileExists(atPath: url.path) else { return false }
+        try? createDirectory(at: url, withIntermediateDirectories: true, attributes: [:])
+        return true
     }
 }
