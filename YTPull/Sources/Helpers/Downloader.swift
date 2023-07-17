@@ -14,18 +14,14 @@ enum DownloaderError: Error {
 final class Downloader: NSObject, ObservableObject {
 
     @Published var alertMessage = ""
-    @Published var isShowAlert = false
     @Published var progress: CGFloat = 0
-    @Published private var video: VideoInfo!
 
-    func start(_ video: VideoInfo) throws {
+    private var video: VideoEntity!
+
+    func start(_ video: VideoEntity) throws {
         self.video = video
-        guard let url = video._url else {
-            self.alertMessage = DownloaderError.urlInvalid.localizedDescription
-            throw DownloaderError.urlInvalid
-        }
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
-        let request = URLRequest(url: url)
+        let request = URLRequest(url: URL(string: video.url)!)
         let sessionDownloadTask = session.downloadTask(with: request)
         sessionDownloadTask.resume()
     }
@@ -35,8 +31,9 @@ final class Downloader: NSObject, ObservableObject {
 extension Downloader: URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         do {
-            let file = File(name: video.fulltitle, mediaType: .video)
-            try FileManager.default.copyItem(at: location, to: file.path)
+            let file = File(name: video.title, mediaType: .video)
+            try Files.copyItem(at: location, to: file.path)
+            VideoStore.shared.update(storedURL: file.path.absoluteString, for: video)
         } catch {
             DispatchQueue.main.async {
                 self.alertMessage = error.localizedDescription

@@ -8,30 +8,42 @@
 import AVFoundation
 import Foundation
 
-enum MediaType: CaseIterable {
+enum MediaType: Int, CaseIterable {
+    case none // can not be select, use for hidden label
     case audio
     case video
-    case none // can not be select, use for hidden label
+
 
     var value: String {
         switch self {
+        case .none:
+            return "-"
         case .audio:
             return "Audio"
         case .video:
             return "Video"
-        case .none:
-            return ""
         }
     }
 
     var type: UTType {
         switch self {
+        case .none:
+            return .png
         case .audio:
             return .mpeg4Audio
         case .video:
             return .mpeg4Movie
-        case .none:
-            return .png
+        }
+    }
+
+    init(_ type: Int16) {
+        switch type {
+        case 1:
+            self = .audio
+        case 2:
+            self = .video
+        default:
+            self = .none
         }
     }
 }
