@@ -14,7 +14,7 @@ struct YTPullApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView().hidden()
+            DownloadConsoleView(viewModel: .init()).hidden()
         }
     }
 }
@@ -22,12 +22,13 @@ struct YTPullApp: App {
 class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 
     private var statusBarItem: NSStatusItem!
+    @Published var viewModel: DownloadInputViewModel = .init()
 
-    private let popover: NSPopover = {
+    private lazy var popover: NSPopover = {
         let _popover = NSPopover()
-        _popover.contentSize = NSSize(width: 500, height: 300)
+        _popover.contentSize = NSSize(width: 375, height: 667)
         _popover.behavior = .transient
-        _popover.contentViewController = NSHostingController(rootView: ContentView())
+        _popover.contentViewController = NSHostingController(rootView: DownloadConsoleView(viewModel: viewModel))
         _popover.contentViewController?.view.window?.makeKey()
         return _popover
     }()
@@ -59,6 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             if popover.isShown {
                 popover.performClose(self)
             } else {
+                getURLClipboard()
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             }
         case .rightMouseDown:
@@ -66,6 +68,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             statusBarItem.button?.performClick(nil)
         default:
             break
+        }
+    }
+
+    private func getURLClipboard() {
+        let readURL = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string)
+        if let clipboardContent = readURL {
+            if !clipboardContent.contains("youtube.com") && !clipboardContent.contains("youtu.be") { return }
+            guard let _ = URL(string: clipboardContent) else { return }
+            self.viewModel.url = clipboardContent
         }
     }
 }
