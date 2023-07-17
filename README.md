@@ -29,7 +29,7 @@
 - [x] Download videos from Youtube URL. 
 - [x] Download videos from playlists or channels.
 - [x] Extract and export best audio from video.
-- [ ] Auto copy/paste Youtube URL.
+- [x] Auto copy/paste Youtube URL.
 
 ## Installation
 There are multiple ways to install the app.
