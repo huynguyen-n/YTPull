@@ -13,6 +13,7 @@
 		E550DC112A590A22009C9ED1 /* ManagedObjectsObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E550DC102A590A22009C9ED1 /* ManagedObjectsObserver.swift */; };
 		E550DC132A590A99009C9ED1 /* ImageLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E550DC122A590A99009C9ED1 /* ImageLoadingView.swift */; };
 		E550DC152A590BA5009C9ED1 /* Responder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E550DC142A590BA5009C9ED1 /* Responder.swift */; };
+		E550DC172A64FD7E009C9ED1 /* DownloadConsoleErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E550DC162A64FD7E009C9ED1 /* DownloadConsoleErrorView.swift */; };
 		E554E4382A4EE20D00340AD6 /* DownloadInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E4372A4EE20D00340AD6 /* DownloadInputView.swift */; };
 		E554E43A2A5262BD00340AD6 /* DownloadListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E4392A5262BD00340AD6 /* DownloadListView.swift */; };
 		E554E43D2A527A5B00340AD6 /* VideoStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E554E43C2A527A5B00340AD6 /* VideoStore.swift */; };
@@ -63,6 +64,7 @@
 		E550DC102A590A22009C9ED1 /* ManagedObjectsObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedObjectsObserver.swift; sourceTree = "<group>"; };
 		E550DC122A590A99009C9ED1 /* ImageLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadingView.swift; sourceTree = "<group>"; };
 		E550DC142A590BA5009C9ED1 /* Responder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responder.swift; sourceTree = "<group>"; };
+		E550DC162A64FD7E009C9ED1 /* DownloadConsoleErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadConsoleErrorView.swift; sourceTree = "<group>"; };
 		E554E4372A4EE20D00340AD6 /* DownloadInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadInputView.swift; sourceTree = "<group>"; };
 		E554E4392A5262BD00340AD6 /* DownloadListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadListView.swift; sourceTree = "<group>"; };
 		E554E43C2A527A5B00340AD6 /* VideoStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStore.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8D51829DC2A6E00B3D832 /* DownloadConsoleView.swift */,
+				E550DC162A64FD7E009C9ED1 /* DownloadConsoleErrorView.swift */,
 				E554E4372A4EE20D00340AD6 /* DownloadInputView.swift */,
 				E554E4392A5262BD00340AD6 /* DownloadListView.swift */,
 				E554E43F2A54045300340AD6 /* DownloadVideoEntityCell.swift */,
@@ -412,6 +415,7 @@
 				E5B8D55029DFC64000B3D832 /* Commands.swift in Sources */,
 				E5B8D51729DC2A6E00B3D832 /* YTPullApp.swift in Sources */,
 				E550DC132A590A99009C9ED1 /* ImageLoadingView.swift in Sources */,
+				E550DC172A64FD7E009C9ED1 /* DownloadConsoleErrorView.swift in Sources */,
 				E550DC0D2A582131009C9ED1 /* VideoStore+Entities.swift in Sources */,
 				E550DC0B2A5820FC009C9ED1 /* Helpers.swift in Sources */,
 				E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */,
@@ -588,6 +592,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YTPull/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -608,16 +613,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = YTPull/Resources/YTPull.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YTPull/Resources/Preview Content\"";
-				DEVELOPMENT_TEAM = 8ULASH65Y2;
+				DEVELOPMENT_TEAM = L76363ZU66;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = YTPull/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -627,6 +634,7 @@
 				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};

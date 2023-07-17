@@ -13,22 +13,20 @@ struct YTPullApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
-        WindowGroup {
-            DownloadConsoleView(viewModel: .init()).hidden()
-        }
+        WindowGroup { }.defaultSize(.zero)
     }
 }
 
 class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 
     private var statusBarItem: NSStatusItem!
+    private var cmdPermissionsStatusCode: Int32!
     @Published var viewModel: DownloadInputViewModel = .init()
 
     private lazy var popover: NSPopover = {
         let _popover = NSPopover()
         _popover.contentSize = NSSize(width: 375, height: 667)
         _popover.behavior = .transient
-        _popover.contentViewController = NSHostingController(rootView: DownloadConsoleView(viewModel: viewModel))
         _popover.contentViewController?.view.window?.makeKey()
         return _popover
     }()
@@ -49,7 +47,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
         statusBarItem.button?.image = NSImage(systemSymbolName: "flame.circle", accessibilityDescription: nil)
         statusBarItem.button?.action = #selector(didTapStatusButton)
         statusBarItem.button?.sendAction(on: [.leftMouseDown, .rightMouseDown])
-        Commands.Permission.ytdlp.execute()
+        cmdPermissionsStatusCode = Commands.Permission.ytdlp.execute().statusCode
+        if cmdPermissionsStatusCode == EXIT_SUCCESS {
+            popover.contentViewController = NSHostingController(rootView: DownloadConsoleView(viewModel: viewModel))
+        } else {
+            popover.contentViewController = NSHostingController(rootView: DownloadConsoleErrorView())
+        }
     }
 
     @objc private func didTapStatusButton() {
@@ -60,7 +63,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
             if popover.isShown {
                 popover.performClose(self)
             } else {
-                getURLClipboard()
+                if cmdPermissionsStatusCode == EXIT_SUCCESS {
+                    getURLClipboard()
+                }
                 popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
             }
         case .rightMouseDown:
