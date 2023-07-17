@@ -13,7 +13,23 @@ struct YTPullApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
-        WindowGroup { }.defaultSize(.zero)
+        WindowGroup {
+            HStack {
+                Text("We only support for menu bar now.")
+                Image(systemName: "arrow.turn.right.up").font(.system(size: 32))
+            }
+            .padding(16)
+            .onAppear {
+                DispatchQueue.main.async {
+                    NSApplication.shared.windows.forEach { window in
+                        window.standardWindowButton(.zoomButton)?.isEnabled = false
+                    }
+                }
+            }
+        }
+        .defaultPosition(.top)
+        .windowStyle(.hiddenTitleBar)
+        .windowResizability(.contentSize)
     }
 }
 
@@ -56,6 +72,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
     }
 
     @objc private func didTapStatusButton() {
+        /// Close main window in case still open same time with popover.
+        if NSApp.windows.last?.isMainWindow == true {
+            NSApp.windows.last?.close()
+        }
         let event = NSApp.currentEvent?.type
         switch event {
         case .leftMouseDown:
