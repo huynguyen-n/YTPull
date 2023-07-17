@@ -23,8 +23,6 @@ extension Commands {
             Request(executableURL: "/bin/chmod", arguments: ["u+x", fileURL])
         }
 
-
-
         @discardableResult
         func execute(for URL: String? = nil) -> Commands.Result {
             return Commands.Task.run(request, isWaitUntilExit: true)
