@@ -56,7 +56,6 @@ final class DownloadListViewViewModel: ObservableObject {
 
         videosObserver.$objects.dropFirst().sink { [weak self] videos in
             guard let self = self else { return }
-            videos.forEach { print($0.thumbnail)}
             withAnimation {
                 if videos.count == self.videos.count - 1 { // remove a video
                     self.videos = videos.sorted(by: { $0.createdAt > $1.createdAt })

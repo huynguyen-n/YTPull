@@ -45,3 +45,12 @@ extension URL {
         return url
     }
 }
+
+extension String {
+    var isYTURL: Bool {
+        let regex = #"^((http|https)\:\/\/)?(www\.youtube\.com|youtu\.?be)\/((watch\?v=)?([a-zA-Z0-9]{11}))(&.*)*$"#
+        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
+        return predicate.evaluate(with: self)
+    }
+}
+

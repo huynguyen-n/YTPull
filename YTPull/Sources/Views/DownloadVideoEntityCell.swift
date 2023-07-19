@@ -71,6 +71,16 @@ private struct DownloadVideoCell: View {
     private var image: some View {
         ZStack {
             ImageLoadingView(url: video.thumbnail)
+            HStack {
+                VStack {
+                    Image(systemName: MediaType(video.type) == .video ? "airplayvideo.circle.fill" : "airplayaudio.circle.fill")
+                        .font(.system(size: 24))
+                        .foregroundStyle(.red)
+                    Spacer()
+                }
+                Spacer()
+            }
+            progressViews
             if isHovered && !video.storedURL.isEmpty {
                 ZStack(alignment: .center) {
                     Color.black.opacity(0.5).frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -101,7 +111,7 @@ private struct DownloadVideoCell: View {
 
     @ViewBuilder
     private var content: some View {
-        VStack(alignment: .leading, spacing: 4, content: {
+        VStack(alignment: .leading, spacing: 4) {
             Text(video.title)
                 .font(.title3)
                 .fontWeight(.medium)
@@ -109,28 +119,38 @@ private struct DownloadVideoCell: View {
             Text(video.channel)
                 .font(.subheadline)
                 .fontWeight(.light)
-            switch MediaType(video.type) {
-            case .audio:
-                if !alertMessage.isEmpty {
-                    Text(String(format: alertMessage, extracter.progress))
-                        .font(.caption2)
-                        .fontWeight(.light)
-                        .foregroundColor(Color.red)
-                } else {
-                    Text(String(format: "%.1f%%", extracter.progress))
-                        .font(.caption2)
-                        .fontWeight(.light)
-                }
-            case .video:
-                Text(String(format: "%.1f%%", downloader.progress))
-                    .font(.caption2)
-                    .fontWeight(.light)
-            case .none:
-                EmptyView()
-            }
-        })
+        }
         .padding(.trailing)
         Spacer()
+    }
+
+    @ViewBuilder
+    private var progressViews: some View {
+        let emptyView = EmptyView()
+        let total: CGFloat = 100.0
+        let type = MediaType(video.type)
+        switch type {
+        case .audio:
+            let progress = extracter.progress
+            if progress == total {
+                emptyView
+            } else {
+                ProgressView(value: progress, total: total)
+                    .progressViewStyle(.circular)
+                    .foregroundColor(Color.blue)
+            }
+        case .video:
+            let progress = downloader.progress
+            if progress == total {
+                emptyView
+            } else {
+                ProgressView(value: progress, total: total)
+                    .progressViewStyle(.circular)
+                    .tint(Color.blue)
+            }
+        case .none:
+            emptyView
+        }
     }
 }
 
