@@ -98,10 +98,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, ObservableObject {
 
     private func getURLClipboard() {
         guard let readURL = NSPasteboard.general.pasteboardItems?.first?.string(forType: .string),
-              readURL.isYTURL else {
+              let buildYTURL = readURL.buildYTURL else {
             return
         }
-        self.viewModel.url = readURL
+        self.viewModel.url = buildYTURL
     }
 }
 

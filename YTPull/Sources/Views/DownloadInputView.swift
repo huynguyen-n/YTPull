@@ -88,7 +88,7 @@ final class DownloadInputViewModel: ObservableObject {
     private func binding() {
         $url.sink { [weak self] strURL in
             guard let self else { return }
-            guard strURL.isYTURL else { return }
+            guard strURL.buildYTURL != nil else { return }
             self.processURL()
         }.store(in: &cancellables)
 

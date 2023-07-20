@@ -46,11 +46,20 @@ extension URL {
     }
 }
 
-extension String {
+private extension URLComponents {
     var isYTURL: Bool {
-        let regex = #"^((http|https)\:\/\/)?(www\.youtube\.com|youtu\.?be)\/((watch\?v=)?([a-zA-Z0-9]{11}))(&.*)*$"#
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        return predicate.evaluate(with: self)
+        return scheme?.hasSuffix("youtube.com") != nil && path.hasSuffix("/watch")
+    }
+}
+
+extension String {
+    var buildYTURL: String? {
+        var components = URLComponents(string: self)
+        guard components?.isYTURL == true else {
+            return nil
+        }
+        components?.queryItems?.removeAll(where: { $0.name != "v" })
+        return components?.string
     }
 }
 
