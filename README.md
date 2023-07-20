@@ -7,27 +7,32 @@
 		<b>Download YouTube video and audio</b>
 	</p>
 	<p align="center">
-	<a href="https://github.com/huynguyen-n/YTPull/actions/workflows/ytpull.yml">
-		<img src="https://img.shields.io/github/actions/workflow/status/huynguyen-n/YTPull/ytpull.yml?style=flat-square&logo=github&label=Actions" />
-	</a>
-	<a href="https://github.com/huynguyen-n/YTPull/releases/latest">
- 		<img src="https://img.shields.io/badge/download-latest-brightgreen.svg?style=flat-square&label=Download" alt="download">
-	</a>
-	<a href="#">
- 		<img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat-square&label=Platform">
-	</a>
-	<a href="#repository-details-container">
- 		<img src="https://img.shields.io/github/stars/huynguyen-n/YTPull?style=flat-square&logo=github&label=Stars">
-	</a>
-	<a href="#">
- 		<img src="https://img.shields.io/github/downloads/huynguyen-n/YTPull/total.svg?style=flat-square&label=Used By">
-	</a>
-	<a href="https://ko-fi.com/huynn">
- 		<img src="https://img.shields.io/badge/Kofi_me-red?style=flat-square&logo=kofi&logoColor=white">
-	</a>
-	<a href="https://paypal.me/huynguyen1012">
- 		<img src="https://img.shields.io/badge/Paypal-00457C.svg?logo=paypal&logoColor=white">
-	</a>
+		<a href="https://github.com/huynguyen-n/YTPull/actions/workflows/ytpull.yml">
+			<img src="https://img.shields.io/github/actions/workflow/status/huynguyen-n/YTPull/ytpull.yml?style=flat-square&logo=github&label=Actions" />
+		</a>
+		<a href="https://github.com/huynguyen-n/YTPull/releases/latest">
+	 		<img src="https://img.shields.io/badge/download-latest-brightgreen.svg?style=flat-square&label=Download" alt="download" />
+		</a>
+		<a href="#">
+	 		<img src="https://img.shields.io/badge/platform-macOS-lightgrey.svg?style=flat-square&label=Platform" />
+		</a>
+		<a href="#repository-details-container">
+	 		<img src="https://img.shields.io/github/stars/huynguyen-n/YTPull?style=flat-square&logo=github&label=Stars" />
+		</a>
+		<a href="#">
+	 		<img src="https://img.shields.io/github/downloads/huynguyen-n/YTPull/total.svg?style=flat-square&label=Used By" />
+		</a>
+		<a href="https://ko-fi.com/huynn">
+	 		<img src="https://img.shields.io/badge/Kofi_me-red?style=flat-square&logo=kofi&logoColor=white" />
+		</a>
+		<a href="https://paypal.me/huynguyen1012">
+	 		<img src="https://img.shields.io/badge/Paypal-00457C.svg?logo=paypal&logoColor=white" />
+		</a>
+	</p>
+	<br />
+	<img src="https://github.com/huynguyen-n/YTPull/blob/chore/polishing-ui-and-readme/stuff/Demo.gif" />
+	<br />
+	<br />
 </div>
 
 **YTPull** is a free and open source macOS application that lets you download YouTube videos and audio using SwiftUI and Combine. It provides a modern and responsive UI, advanced downloading capabilities, and seamless integration with macOS technologies. With **YTPull**, you can easily grab your favorite YouTube media for offline use or other purposes.
