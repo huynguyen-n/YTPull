@@ -73,10 +73,12 @@ private struct DownloadVideoCell: View {
             ImageLoadingView(url: video.thumbnail)
             HStack {
                 VStack {
-                    Image(systemName: MediaType(video.type) == .video ? "airplayvideo.circle.fill" : "airplayaudio.circle.fill")
-                        .font(.system(size: 24))
-                        .foregroundStyle(.red)
                     Spacer()
+                    Text(MediaType(video.type).value.lowercased())
+                        .padding(4)
+                        .font(.caption)
+                        .background(.red)
+                        .foregroundColor(.white)
                 }
                 Spacer()
             }

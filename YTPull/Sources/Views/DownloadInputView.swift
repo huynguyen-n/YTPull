@@ -13,8 +13,8 @@ struct DownloadInputView: View {
 
     var body: some View {
         VStack {
-            TextField("YouTube URL", text: $viewModel.url)
-                .textFieldStyle(.roundedBorder)
+            Text(viewModel.url.isEmpty ? "Please copy a Youtube URL" : viewModel.url)
+                .font(.title3)
 
             #if DEBUG
             Button(action: viewModel.randomURL) {
