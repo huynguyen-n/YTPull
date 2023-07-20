@@ -30,7 +30,7 @@
 		</a>
 	</p>
 	<br />
-	<img src="https://github.com/huynguyen-n/YTPull/blob/chore/polishing-ui-and-readme/stuff/Demo.gif" />
+	<img src="stuff/Demo.gif" />
 	<br />
 	<br />
 </div>
