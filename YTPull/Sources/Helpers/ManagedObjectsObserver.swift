@@ -35,6 +35,6 @@ extension ManagedObjectsObserver where T == VideoEntity {
         let request = NSFetchRequest<VideoEntity>(entityName: "\(VideoEntity.self)")
         request.sortDescriptors = [NSSortDescriptor(keyPath: \VideoEntity.createdAt, ascending: false)]
 
-        return ManagedObjectsObserver(request: request, context: context, cacheName: "com.github.pulse.pins-cache")
+        return ManagedObjectsObserver(request: request, context: context, cacheName: "com.github.ytpull.video-cache")
     }
 }

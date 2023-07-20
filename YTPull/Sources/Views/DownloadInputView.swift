@@ -13,8 +13,8 @@ struct DownloadInputView: View {
 
     var body: some View {
         VStack {
-            TextField("YouTube URL", text: $viewModel.url)
-                .textFieldStyle(.roundedBorder)
+            Text(viewModel.url.isEmpty ? "Please copy a Youtube URL" : viewModel.url)
+                .font(.title3)
 
             #if DEBUG
             Button(action: viewModel.randomURL) {
@@ -33,6 +33,7 @@ struct DownloadInputView: View {
                 }
                 .frame(maxWidth: 100)
                 .labelsHidden()
+                .disabled(viewModel.videoInfo == nil)
                 HStack {
                     Spacer()
                     HStack {
@@ -51,9 +52,8 @@ struct DownloadInputView: View {
                     Text("Download")
                         .frame(width: 100)
                 }
-                .disabled(viewModel.media == .none)
+                .disabled(viewModel.isDisabled)
             }
-            .disabled(viewModel.videoInfo == nil)
         }
         .padding([.horizontal, .top])
     }
@@ -69,7 +69,7 @@ final class DownloadInputViewModel: ObservableObject {
     @Published var url: String = ""
     @Published var media: MediaType = .none
     @Published private(set) var isLoading: Bool = false
-    @Published private(set) var isDisabled: Bool = false
+    @Published private(set) var isDisabled: Bool = true
     @Published var errorMessage: String = ""
 
     var videoInfo: VideoInfo?
@@ -88,8 +88,14 @@ final class DownloadInputViewModel: ObservableObject {
     private func binding() {
         $url.sink { [weak self] strURL in
             guard let self else { return }
-            guard strURL.isValid else { return }
+            guard strURL.buildYTURL != nil else { return }
             self.processURL()
+        }.store(in: &cancellables)
+
+        $media.sink { [weak self] value in
+            guard let self, let video = self.videoInfo, value != .none else { return }
+            let isEmpty = (try? self.store.allVideos())?.compactMap { $0 }.filter { $0.id == video.id && value == MediaType($0.type) }.isEmpty ?? false
+            self.isDisabled = !isEmpty
         }.store(in: &cancellables)
     }
 
@@ -127,6 +133,7 @@ final class DownloadInputViewModel: ObservableObject {
         videoInfo = nil
         url = ""
         media = .none
+        isDisabled = true
     }
 
     private func excuteBestMedia(completion: @escaping (VideoInfo?) -> Void) {
@@ -147,13 +154,5 @@ private extension Data? {
             return nil
         }
         return try? JSONDecoder().decode(VideoInfo.self, from: self)
-    }
-}
-
-private extension String {
-    var isValid: Bool {
-        let regex = "(http(s)?:\\/\\/)?(www\\.|m\\.)?youtu(be\\.com|\\.be)(\\/watch\\?([&=a-z]{0,})(v=[\\d\\w]{1,}).+|\\/[\\d\\w]{1,})"
-        let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
-        return predicate.evaluate(with: self)
     }
 }

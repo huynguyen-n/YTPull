@@ -14,7 +14,7 @@ enum DownloaderError: Error {
 final class Downloader: NSObject, ObservableObject {
 
     @Published var alertMessage = ""
-    @Published var progress: CGFloat = 0
+    @Published var progress: CGFloat = 0.0
 
     private var video: VideoEntity!
 
