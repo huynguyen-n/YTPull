@@ -37,6 +37,7 @@ struct ImageLoadingView: View {
         .onAppear {
             try? imageLoader.fetch()
         }
+        .frame(minHeight: .zero)
     }
 }
 

@@ -45,3 +45,21 @@ extension URL {
         return url
     }
 }
+
+private extension URLComponents {
+    var isYTURL: Bool {
+        return scheme?.hasSuffix("youtube.com") != nil && path.hasSuffix("/watch")
+    }
+}
+
+extension String {
+    var buildYTURL: String? {
+        var components = URLComponents(string: self)
+        guard components?.isYTURL == true else {
+            return nil
+        }
+        components?.queryItems?.removeAll(where: { $0.name != "v" })
+        return components?.string
+    }
+}
+
