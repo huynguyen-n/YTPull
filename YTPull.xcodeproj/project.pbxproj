@@ -31,9 +31,6 @@
 		E5B8D51929DC2A6E00B3D832 /* DownloadConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D51829DC2A6E00B3D832 /* DownloadConsoleView.swift */; };
 		E5B8D51B29DC2A7000B3D832 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D51A29DC2A7000B3D832 /* Assets.xcassets */; };
 		E5B8D51E29DC2A7000B3D832 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D51D29DC2A7000B3D832 /* Preview Assets.xcassets */; };
-		E5B8D52929DC2A7000B3D832 /* YTPullTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */; };
-		E5B8D53329DC2A7000B3D832 /* YTPullUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */; };
-		E5B8D53529DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */; };
 		E5B8D55029DFC64000B3D832 /* Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D54F29DFC64000B3D832 /* Commands.swift */; };
 		E5B8D55229DFC88200B3D832 /* yt-dlp.sh in Resources */ = {isa = PBXBuildFile; fileRef = E5B8D55129DFC88200B3D832 /* yt-dlp.sh */; };
 		E5B8D55F29E0209500B3D832 /* VideoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8D55E29E0209500B3D832 /* VideoInfo.swift */; };
@@ -85,10 +82,7 @@
 		E5B8D51D29DC2A7000B3D832 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E5B8D51F29DC2A7000B3D832 /* YTPull.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YTPull.entitlements; sourceTree = "<group>"; };
 		E5B8D52429DC2A7000B3D832 /* YTPullTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTPullTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullTests.swift; sourceTree = "<group>"; };
 		E5B8D52E29DC2A7000B3D832 /* YTPullUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTPullUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITests.swift; sourceTree = "<group>"; };
-		E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTPullUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E5B8D54F29DFC64000B3D832 /* Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Commands.swift; sourceTree = "<group>"; };
 		E5B8D55129DFC88200B3D832 /* yt-dlp.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "yt-dlp.sh"; sourceTree = "<group>"; };
 		E5B8D55E29E0209500B3D832 /* VideoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfo.swift; sourceTree = "<group>"; };
@@ -159,8 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				E5B8D51529DC2A6E00B3D832 /* YTPull */,
-				E5B8D52729DC2A7000B3D832 /* YTPullTests */,
-				E5B8D53129DC2A7000B3D832 /* YTPullUITests */,
 				E5B8D51429DC2A6E00B3D832 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -191,23 +183,6 @@
 				E5B8D51D29DC2A7000B3D832 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		E5B8D52729DC2A7000B3D832 /* YTPullTests */ = {
-			isa = PBXGroup;
-			children = (
-				E5B8D52829DC2A7000B3D832 /* YTPullTests.swift */,
-			);
-			path = YTPullTests;
-			sourceTree = "<group>";
-		};
-		E5B8D53129DC2A7000B3D832 /* YTPullUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E5B8D53229DC2A7000B3D832 /* YTPullUITests.swift */,
-				E5B8D53429DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift */,
-			);
-			path = YTPullUITests;
 			sourceTree = "<group>";
 		};
 		E5B8D54729DD194400B3D832 /* Resources */ = {
@@ -434,7 +409,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5B8D52929DC2A7000B3D832 /* YTPullTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,8 +416,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5B8D53529DC2A7000B3D832 /* YTPullUITestsLaunchTests.swift in Sources */,
-				E5B8D53329DC2A7000B3D832 /* YTPullUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +570,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -629,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 1.0.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.huy.YTPull;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
