@@ -12,6 +12,7 @@ extension Commands {
     struct Result {
         /// get status code after execute
         let statusCode: Int32
+
         /// get `Data` output
         let data: Data?
 
@@ -31,6 +32,13 @@ extension Commands {
             self.statusCode = statusCode
             self.data = data
             self.error = error
+        }
+
+        var errorLocalization: String {
+            guard let data, let err = String(data: data, encoding: .utf8) else {
+                return "Can not parse data"
+            }
+            return err
         }
     }
 }
