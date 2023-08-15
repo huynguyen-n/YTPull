@@ -39,8 +39,6 @@ struct DownloadInputView: View {
                     HStack {
                         if viewModel.isLoading {
                             ProgressView().progressViewStyle(.circular).scaleEffect(0.6)
-                        } else if !viewModel.errorMessage.isEmpty  {
-                            Text(viewModel.errorMessage).foregroundColor(.red)
                         } else {
                             Image("youtube-squared").resizable().scaledToFit()
                         }
@@ -53,6 +51,10 @@ struct DownloadInputView: View {
                         .frame(width: 100)
                 }
                 .disabled(viewModel.isDisabled)
+            }
+            if !viewModel.errorMessage.isEmpty  {
+                Text(viewModel.errorMessage)
+                    .foregroundColor(.red)
             }
         }
         .padding([.horizontal, .top])
@@ -93,9 +95,9 @@ final class DownloadInputViewModel: ObservableObject {
         }.store(in: &cancellables)
 
         $media.sink { [weak self] value in
-            guard let self, let video = self.videoInfo, value != .none else { return }
+            guard let self, let video = self.videoInfo else { return }
             let isEmpty = (try? self.store.allVideos())?.compactMap { $0 }.filter { $0.id == video.id && value == MediaType($0.type) }.isEmpty ?? false
-            self.isDisabled = !isEmpty
+            self.isDisabled = !isEmpty || value == .none
         }.store(in: &cancellables)
     }
 
@@ -142,7 +144,9 @@ final class DownloadInputViewModel: ObservableObject {
             guard let self else { return }
             self.isLoading = false
             let command = Commands.YTDLP.bestMedia.execute(for: self.url)
-            self.errorMessage = command.error ?? ""
+            if let error = command.error {
+                self.errorMessage = error.isEmpty ? command.errorLocalization : error
+            }
             completion(command.data.videoInfo)
         }
     }

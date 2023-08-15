@@ -41,7 +41,7 @@ private struct DownloadVideoCell: View {
                 image
                 content
             }
-            .background(.black)
+            .background(Color(NSColor.underPageBackgroundColor))
             .listRowSeparator(.hidden)
             .clipped()
             .cornerRadius(8)
@@ -85,7 +85,7 @@ private struct DownloadVideoCell: View {
             progressViews
             if isHovered && !video.storedURL.isEmpty {
                 ZStack(alignment: .center) {
-                    Color.black.opacity(0.5).frame(maxWidth: .infinity, maxHeight: .infinity)
+                    Color(nsColor: .underPageBackgroundColor).opacity(0.5).frame(maxWidth: .infinity, maxHeight: .infinity)
 
                     HStack {
                         Button {
@@ -139,7 +139,7 @@ private struct DownloadVideoCell: View {
             } else {
                 ProgressView(value: progress, total: total)
                     .progressViewStyle(.circular)
-                    .foregroundColor(Color.blue)
+                    .tint(Color(NSColor.controlBackgroundColor))
             }
         case .video:
             let progress = downloader.progress
@@ -148,7 +148,7 @@ private struct DownloadVideoCell: View {
             } else {
                 ProgressView(value: progress, total: total)
                     .progressViewStyle(.circular)
-                    .tint(Color.blue)
+                    .tint(Color(NSColor.controlBackgroundColor))
             }
         case .none:
             emptyView
